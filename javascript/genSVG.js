@@ -1,5 +1,5 @@
 // check the import
-const filename = "main.js";
+const filename = "genSVG.js";
 console.log(`${filename} is imported`);
 
 // coordinate mana

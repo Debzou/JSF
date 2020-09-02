@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="./stylesheet/style.css">
     <script src="http://d3js.org/d3.v5.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
-    <script defer src="./javascript/main.js"></script>
+    <script src="./javascript/genSVG.js"></script>
+    <script src="./javascript/functionClick.js"></script>
 </head>
 <body id="body">
 <section class="section">
@@ -15,16 +16,16 @@
         <div class="column">
             <div class="container columns">
                 <div class="column">
-                    <input class="input" maxlength="2" placeholder="Mana">
+                    <input class="input" maxlength="2" id="mana" placeholder="Mana">
                 </div>
                 <div class="column">
-                    <input class="input" maxlength="2" placeholder="Attack">
+                    <input class="input" maxlength="2" id="attack" placeholder="Attack">
                 </div>
                 <div class="column">
-                    <input class="input" maxlength="2" placeholder="Health">
+                    <input class="input" maxlength="2" id="health" placeholder="Health">
                 </div>
             </div>       
-            <button class="button is-danger is-outlined"><i class="fas fa-redo-alt"></i></button>
+            <button class="button is-danger is-outlined" onclick="generateCard()"><i class="fas fa-redo-alt"></i></button>
         </div>
 
         <div class="column">
