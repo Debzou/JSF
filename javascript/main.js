@@ -5,11 +5,11 @@ console.log(`${filename} is imported`);
 // define containe
 const svgContainer = d3.select("#card")
     .append("svg")
-    .attr("width",300)
-    .attr("height",300);
+    .attr("width",340)
+    .attr("height",512);
 
 // add pattern 
 const card = svgContainer.append('svg:image')
     .attr('href','./img/none.png')
-    .attr('width', "250")
-    .attr('height', "250");
+    .attr('width', 340)
+    .attr('height', 512);
