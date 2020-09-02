@@ -13,3 +13,12 @@ const card = svgContainer.append('svg:image')
     .attr('href','./img/none.png')
     .attr('width', 340)
     .attr('height', 512);
+
+// add div mana
+const mana = svgContainer.append('svg:text')
+    .attr('x',35)
+    .attr('y',62)
+    .attr('id','mana')
+    .text('1')
+    .attr("font-size", "40px")
+    .attr("fill", d3.color("white"))
