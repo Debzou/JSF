@@ -3,13 +3,12 @@ const filename = "main.js";
 console.log(`${filename} is imported`);
 
 // coordinate mana
-// with one number
+// with one mana's number
 const mx1 = 35;
 const my1 = 64;
-// with two number
+// with two mana's number
 const mx2 = 23;
 const my2 = 64;
-
 
 // define container
 const svgContainer = d3.select("#card")

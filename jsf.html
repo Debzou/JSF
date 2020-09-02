@@ -13,10 +13,20 @@
 <h1 class="title">JSF Generator</h1>
     <div class="container columns">
         <div class="column">
-            <input class="input" type="text" placeholder="Mana">
-            <input class="input" type="text" placeholder="Attack">
-            <input class="input" type="text" placeholder="Health">
+            <div class="container columns">
+                <div class="column">
+                    <input class="input" maxlength="2" placeholder="Mana">
+                </div>
+                <div class="column">
+                    <input class="input" maxlength="2" placeholder="Attack">
+                </div>
+                <div class="column">
+                    <input class="input" maxlength="2" placeholder="Health">
+                </div>
+            </div>       
+            <button class="button is-danger is-outlined"><i class="fas fa-redo-alt"></i></button>
         </div>
+
         <div class="column">
             <div id="card"></div>
         </div>
