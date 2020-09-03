@@ -10,7 +10,7 @@ $("#generateCard").click(function() {
     let mana = $("input#mana").val();
     let health = $("input#health").val();
     let attack = $("input#attack").val();
-    // check length
+    // check length mana
     // depending on the size, the coordinates will change.
     if (mana.toString().length < 2){
         // postion
@@ -25,6 +25,7 @@ $("#generateCard").click(function() {
         // value
         $('text#manatxt').text(mana);
     }
+    // check length attack
     if (attack.toString().length < 2){
         // postion
         $('text#attacktxt').attr('x',ax1);
@@ -38,6 +39,7 @@ $("#generateCard").click(function() {
         // value
         $('text#attacktxt').text(attack);
     }
+    // check length health
     if (health.toString().length < 2){
         // postion
         $('text#healthtxt').attr('x',hx1);

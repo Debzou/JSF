@@ -8,23 +8,23 @@ const mx1 = 35;
 const my1 = 64;
 // with two mana's number
 const mx2 = 23;
-const my2 = 64;
+const my2 = my1;
 
 // coordinate attack
 // with one attack's number
 const ax1 = 35;
-const ay1 = 465;
+const ay1 = 467;
 // with two attack's number
 const ax2 = 24;
-const ay2 = 465;
+const ay2 = ay1;
 
 // coordinate health
 // with one health's number
 const hx1 = 285;
-const hy1 = 465;
+const hy1 = ay1;
 // with two health's number
 const hx2 = 276;
-const hy2 = 465;
+const hy2 = ay1;
 
 // define container
 const svgContainer = d3.select("#cardsG")
