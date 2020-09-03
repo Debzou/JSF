@@ -3,13 +3,17 @@ const app = express();
 const path = require("path");
 const router = express.Router();
 const fs = require("fs");
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+
 router.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
 router.post("/download", (req, res) => {
-  const svg = req.body;
-  console.log("req", req);
+  console.log("req.body", req.body);
+
+  const svg = req.body.svg;
   console.log("svg", svg);
   fs.writeFile("cardName.svg", svg, function (err) {
     if (err) return console.log(err);
