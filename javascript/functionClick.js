@@ -19,10 +19,23 @@ $("#generateCard").click(function() {
         // value
         $('text#manatxt').text(mana);
     }else{
-        // postion
+        // postion$
         $('text#manatxt').attr('x',mx2);
         $('text#manatxt').attr('y',my2);
         // value
         $('text#manatxt').text(mana);
+    }
+    if (attack.toString().length < 2){
+        // postion
+        $('text#attacktxt').attr('x',ax1);
+        $('text#attacktxt').attr('y',ay1);
+        // value
+        $('text#attacktxt').text(attack);
+    }else{
+        // postion$
+        $('text#attacktxt').attr('x',ax2);
+        $('text#attacktxt').attr('y',ay2);
+        // value
+        $('text#attacktxt').text(attack);
     }
 });
