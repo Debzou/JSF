@@ -11,7 +11,7 @@ const mx2 = 23;
 const my2 = 64;
 
 // define container
-const svgContainer = d3.select("#card")
+const svgContainer = d3.select("#cardsG")
     .append("svg")
     .attr("width",340)
     .attr("height",512);
