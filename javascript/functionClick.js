@@ -38,4 +38,17 @@ $("#generateCard").click(function() {
         // value
         $('text#attacktxt').text(attack);
     }
+    if (health.toString().length < 2){
+        // postion
+        $('text#healthtxt').attr('x',hx1);
+        $('text#healthtxt').attr('y',hy1);
+        // value
+        $('text#healthtxt').text(health);
+    }else{
+        // postion$
+        $('text#healthtxt').attr('x',hx2);
+        $('text#healthtxt').attr('y',hy2);
+        // value
+        $('text#healthtxt').text(health);
+    }
 });

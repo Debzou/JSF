@@ -11,12 +11,20 @@ const mx2 = 23;
 const my2 = 64;
 
 // coordinate attack
-// with one mana's number
+// with one attack's number
 const ax1 = 35;
 const ay1 = 465;
-// with two mana's number
+// with two attack's number
 const ax2 = 24;
 const ay2 = 465;
+
+// coordinate health
+// with one health's number
+const hx1 = 285;
+const hy1 = 465;
+// with two health's number
+const hx2 = 276;
+const hy2 = 465;
 
 // define container
 const svgContainer = d3.select("#cardsG")
@@ -43,6 +51,14 @@ const attack = svgContainer.append('svg:text')
     .attr('x',ax1)
     .attr('y',ay1)
     .attr('id','attacktxt')
+    .text('1')
+    .attr("font-size", "30px")
+    .attr("fill", d3.color("white"));
+
+const health = svgContainer.append('svg:text')
+    .attr('x',hx1)
+    .attr('y',hy1)
+    .attr('id','healthtxt')
     .text('1')
     .attr("font-size", "30px")
     .attr("fill", d3.color("white"));
