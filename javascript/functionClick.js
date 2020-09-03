@@ -4,6 +4,6 @@
 const filename2 = "functionClick.js";
 console.log(`${filename2} is imported`);
 
-function generateCard(){
-    console.log('generate card');
-}
+$("#generateCard").click(function() {
+    console.log($("input#mana").val())
+});
