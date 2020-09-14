@@ -7,10 +7,3 @@
 color: white;
 background-color: #8e254f;
 }
-.buttoncolor1.is-active {
-    color: white;
-}
-.tabs.is-boxed li.is-active a{
-    background-color: transparent;
-  
-  }
