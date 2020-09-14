@@ -26,6 +26,7 @@ const hy1 = ay1;
 const hx2 = 276;
 const hy2 = ay1;
 
+
 // define container
 const svgContainer = d3.select("#cardsG")
     .append("svg")
@@ -37,12 +38,15 @@ const centerImage = svgContainer.append('svg:image')
     .attr('id','output')
     .attr('width', 340)
     .attr('height', 512)
-    .call(d3.drag().on("drag", function () {
-        d3.select(this)
-        .attr("x", d3.event.x)
-        .attr("y", d3.event.y);
-    }))
+    .call(d3.zoom()
+        .scaleExtent([1, 8])
+        .on("zoom", zoom)
+    );
     
+    function zoom() {
+        centerImage.attr("transform", d3.event.transform);
+      }
+
 
 // add pattern 
 const card = svgContainer.append('svg:image')
@@ -75,4 +79,7 @@ const health = svgContainer.append('svg:text')
     .text('1')
     .attr("font-size", "30px")
     .attr("fill", d3.color("white"));
+
+
+
 
