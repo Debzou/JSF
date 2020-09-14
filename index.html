@@ -26,12 +26,12 @@
             </div>
             <div class="container columns">
                 <div class="column">
-                    <a class="button buttoncolor1" id="generateCard"><i class="fas fa-redo-alt"></i></a>
+                    <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+                    <label class="button buttoncolor1" for="file" >Upload Image  &nbsp;<i class="fas fa-images"></i></label>                    
                 </div>
                 <div class="column">
-                    <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
-                    <label for="file" style="cursor: pointer;">Upload Image</label>                    
-                </div>
+                    <a class="button buttoncolor1" id="generateCard"><i class="fas fa-redo-alt"></i></a>
+                </div>               
                 <div class="column">
                     <a class="button buttoncolor1" id="createCard"><i class="fas fa-upload"></i></a>
                 </div>
