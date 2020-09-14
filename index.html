@@ -30,6 +30,11 @@
                     <button class="button is-danger is-outlined" id="generateCard"><i class="fas fa-redo-alt"></i></button>
                 </div>
                 <div class="column">
+                    <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+                    <label for="file" style="cursor: pointer;">Upload Image</label>
+                    
+                </div>
+                <div class="column">
                     <button class="button is-danger is-outlined" id="createCard"><i class="fas fa-upload"></i></button>
                 </div>
             </div>       
@@ -37,13 +42,15 @@
             
         </div>
 
-        <div class="column">
-            <div id="cardsG"></div>
+        <div class="column">    
+            <div id="cardsG"></div>           
         </div>
     </div>
 </section>
 </body>
 <script src="./javascript/genSVG.js"></script>
-<script src="./javascript/functionClick.js"></script>
+<script src="./javascript/functionUpdate.js"></script>
 <script src="./javascript/functionCreate.js"></script>
+<script src="./javascript/functionUpload.js"></script>
+
 </html>

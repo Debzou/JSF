@@ -32,6 +32,12 @@ const svgContainer = d3.select("#cardsG")
     .attr("width",340)
     .attr("height",512);
 
+// add image center 
+const center = svgContainer.append('svg:image')
+    .attr('id','output')
+    .attr('width', 340)
+    .attr('height', 512);
+
 // add pattern 
 const card = svgContainer.append('svg:image')
     .attr('href','./img/none.png')
@@ -62,4 +68,3 @@ const health = svgContainer.append('svg:text')
     .text('1')
     .attr("font-size", "30px")
     .attr("fill", d3.color("white"));
-
