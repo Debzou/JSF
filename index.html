@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="./stylesheet/style.css">
     <script src="http://d3js.org/d3.v5.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>
-   
+    <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>   
 </head>
 <body id="body">
 <section class="section">
@@ -27,21 +26,17 @@
             </div>
             <div class="container columns">
                 <div class="column">
-                    <button class="button is-danger is-outlined" id="generateCard"><i class="fas fa-redo-alt"></i></button>
+                    <button class="button buttoncolor1" id="generateCard"><i class="fas fa-redo-alt"></i></button>
                 </div>
                 <div class="column">
                     <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
-                    <label for="file" style="cursor: pointer;">Upload Image</label>
-                    
+                    <label for="file" style="cursor: pointer;">Upload Image</label>                    
                 </div>
                 <div class="column">
                     <button class="button is-danger is-outlined" id="createCard"><i class="fas fa-upload"></i></button>
                 </div>
-            </div>       
-            
-            
+            </div>              
         </div>
-
         <div class="column">    
             <div id="cardsG"></div>           
         </div>

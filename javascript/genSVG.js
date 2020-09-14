@@ -33,16 +33,23 @@ const svgContainer = d3.select("#cardsG")
     .attr("height",512);
 
 // add image center 
-const center = svgContainer.append('svg:image')
+const centerImage = svgContainer.append('svg:image')
     .attr('id','output')
     .attr('width', 340)
-    .attr('height', 512);
+    .attr('height', 512)
+    .call(d3.drag().on("drag", function () {
+        d3.select(this)
+        .attr("x", d3.event.x)
+        .attr("y", d3.event.y);
+    }))
+    
 
 // add pattern 
 const card = svgContainer.append('svg:image')
     .attr('href','./img/none.png')
     .attr('width', 340)
-    .attr('height', 512);
+    .attr('height', 512)
+    .attr("pointer-events", "none");
 
 // add div mana
 const mana = svgContainer.append('svg:text')
@@ -68,3 +75,4 @@ const health = svgContainer.append('svg:text')
     .text('1')
     .attr("font-size", "30px")
     .attr("fill", d3.color("white"));
+
