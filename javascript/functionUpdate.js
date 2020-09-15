@@ -57,8 +57,13 @@ $("#generateCard").click(function() {
     const color = $('input#colorPicker').val();
     $('rect#description').attr('fill',color);
     // update description
-    const descriptionTxt = $('input#description').val();
-    console.log(descriptionTxt);
-    $('text#descriptiontxt').text(descriptionTxt);
+    const descriptionTxt = $('input#description1').val();
+    $('text#descriptiontxt1').text(descriptionTxt);
+    const descriptionTxt2 = $('input#description2').val();
+    $('text#descriptiontxt2').text(descriptionTxt2);
+    const descriptionTxt3 = $('input#description3').val();
+    $('text#descriptiontxt3').text(descriptionTxt3);
+    const descriptionTxt4 = $('input#description4').val();
+    $('text#descriptiontxt4').text(descriptionTxt4);
 
 });

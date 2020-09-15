@@ -96,13 +96,37 @@ const health = svgContainer.append('svg:text')
     .attr("font-size", "30px")
     .attr("fill", d3.color("white"));
 
-const descript = svgContainer.append('svg:text')
+const descript1 = svgContainer.append('svg:text')
     .attr('x',xd)
     .attr('y',yd)
-    .attr('id','descriptiontxt')
+    .attr('id','descriptiontxt1')
     .text('Your liability')
     .attr("font-size", "20px")
     .attr("fill", d3.color("black"));
+
+const descript2 = svgContainer.append('svg:text')
+.attr('x',xd)
+.attr('y',yd+30)
+.attr('id','descriptiontxt2')
+.text('')
+.attr("font-size", "20px")
+.attr("fill", d3.color("black"));
+
+const descript3 = svgContainer.append('svg:text')
+    .attr('x',xd)
+    .attr('y',yd+60)
+    .attr('id','descriptiontxt3')
+    .text('')
+    .attr("font-size", "20px")
+    .attr("fill", d3.color("black"));
+
+const descript4 = svgContainer.append('svg:text')
+.attr('x',xd)
+.attr('y',yd+90)
+.attr('id','descriptiontxt4')
+.text('')
+.attr("font-size", "20px")
+.attr("fill", d3.color("black"));
 
 
 
