@@ -30,6 +30,9 @@ const hy2 = ay1;
 const xRect = 10;
 const yRect = 280;
 
+// coordinate description
+const xd = 35;
+const yd = 320;
 
 
 // define container
@@ -92,6 +95,14 @@ const health = svgContainer.append('svg:text')
     .text('1')
     .attr("font-size", "30px")
     .attr("fill", d3.color("white"));
+
+const descript = svgContainer.append('svg:text')
+    .attr('x',xd)
+    .attr('y',yd)
+    .attr('id','descriptiontxt')
+    .text('Your liability')
+    .attr("font-size", "20px")
+    .attr("fill", d3.color("black"));
 
 
 
