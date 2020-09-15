@@ -26,6 +26,10 @@ const hy1 = ay1;
 const hx2 = 276;
 const hy2 = ay1;
 
+// coordinate rect
+const xRect = 10;
+const yRect = 280;
+
 
 // define container
 const svgContainer = d3.select("#cardsG")
@@ -43,10 +47,17 @@ const centerImage = svgContainer.append('svg:image')
         .on("zoom", zoom)
     );
     
-    function zoom() {
-        centerImage.attr("transform", d3.event.transform);
-      }
+function zoom() {
+    centerImage.attr("transform", d3.event.transform);
+}
 
+
+const description = svgContainer.append("svg:rect")
+    .attr("x", xRect)
+    .attr("y",yRect)
+    .attr("width",315)
+    .attr("height",200)
+    .attr("fill",'red');
 
 // add pattern 
 const card = svgContainer.append('svg:image')
