@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="./stylesheet/style.css">
     <script src="http://d3js.org/d3.v5.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>   
+    <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>     
+    
 </head>
 <body id="body">
 <section class="section">
@@ -24,6 +25,15 @@
                     <input class="input" maxlength="2" id="health" placeholder="Health">
                 </div>
             </div>
+            <label>Choose your color :</label>
+            <input type="color" id="colorPicker" value="#8C9763">
+            <br/><br/>
+            <input class="input" maxlength="40" id="description1" placeholder="description Line 1"><br/><br/> 
+            <input class="input" maxlength="40" id="description2" placeholder="description Line 2"><br/><br/>  
+            <input class="input" maxlength="40" id="description3" placeholder="description Line 3"><br/><br/>
+            <input class="input" maxlength="40" id="description4" placeholder="description Line 4">              
+            <br/><br/>
+       
             <div class="container columns">
                 <div class="column">
                     <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
@@ -37,6 +47,7 @@
                 </div>
             </div>              
         </div>
+        
         <div class="column">    
             <div id="cardsG"></div>           
         </div>
@@ -47,5 +58,9 @@
 <script src="./javascript/functionUpdate.js"></script>
 <script src="./javascript/functionCreate.js"></script>
 <script src="./javascript/functionUpload.js"></script>
+
+
+
+
 
 </html>

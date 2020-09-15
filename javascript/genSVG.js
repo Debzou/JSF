@@ -26,6 +26,14 @@ const hy1 = ay1;
 const hx2 = 276;
 const hy2 = ay1;
 
+// coordinate rect
+const xRect = 10;
+const yRect = 280;
+
+// coordinate description
+const xd = 35;
+const yd = 320;
+
 
 // define container
 const svgContainer = d3.select("#cardsG")
@@ -43,10 +51,18 @@ const centerImage = svgContainer.append('svg:image')
         .on("zoom", zoom)
     );
     
-    function zoom() {
-        centerImage.attr("transform", d3.event.transform);
-      }
+function zoom() {
+    centerImage.attr("transform", d3.event.transform);
+}
 
+
+const description = svgContainer.append("svg:rect")
+    .attr('id','description')
+    .attr("x", xRect)
+    .attr("y",yRect)
+    .attr("width",315)
+    .attr("height",200)
+    .attr("fill","#8C9763");
 
 // add pattern 
 const card = svgContainer.append('svg:image')
@@ -79,6 +95,38 @@ const health = svgContainer.append('svg:text')
     .text('1')
     .attr("font-size", "30px")
     .attr("fill", d3.color("white"));
+
+const descript1 = svgContainer.append('svg:text')
+    .attr('x',xd)
+    .attr('y',yd)
+    .attr('id','descriptiontxt1')
+    .text('Your liability')
+    .attr("font-size", "20px")
+    .attr("fill", d3.color("black"));
+
+const descript2 = svgContainer.append('svg:text')
+.attr('x',xd)
+.attr('y',yd+30)
+.attr('id','descriptiontxt2')
+.text('')
+.attr("font-size", "20px")
+.attr("fill", d3.color("black"));
+
+const descript3 = svgContainer.append('svg:text')
+    .attr('x',xd)
+    .attr('y',yd+60)
+    .attr('id','descriptiontxt3')
+    .text('')
+    .attr("font-size", "20px")
+    .attr("fill", d3.color("black"));
+
+const descript4 = svgContainer.append('svg:text')
+.attr('x',xd)
+.attr('y',yd+90)
+.attr('id','descriptiontxt4')
+.text('')
+.attr("font-size", "20px")
+.attr("fill", d3.color("black"));
 
 
 
