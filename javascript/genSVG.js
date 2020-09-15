@@ -31,6 +31,7 @@ const xRect = 10;
 const yRect = 280;
 
 
+
 // define container
 const svgContainer = d3.select("#cardsG")
     .append("svg")
@@ -53,11 +54,12 @@ function zoom() {
 
 
 const description = svgContainer.append("svg:rect")
+    .attr('id','description')
     .attr("x", xRect)
     .attr("y",yRect)
     .attr("width",315)
     .attr("height",200)
-    .attr("fill",'red');
+    .attr("fill","rgba(198, 45, 205, 0.8)");
 
 // add pattern 
 const card = svgContainer.append('svg:image')

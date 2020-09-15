@@ -7,3 +7,6 @@
 color: white;
 background-color: #8e254f;
 }
+rect{
+  opacity: 0.7;
+}

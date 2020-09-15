@@ -53,4 +53,7 @@ $("#generateCard").click(function() {
         // value
         $('text#healthtxt').text(health);
     }
+    color = $('input#colorPicker').val();
+    $('rect#description').attr('fill',color);
+
 });
