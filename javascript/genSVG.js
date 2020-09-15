@@ -27,7 +27,7 @@ const hx2 = 270;
 const hy2 = ay1;
 
 // coordinate rect
-const xRect = 10;
+const xRect = 5;
 const yRect = 290;
 
 // coordinate description
@@ -61,7 +61,7 @@ const description = svgContainer.append("svg:rect")
     .attr("x", xRect)
     .attr("y",yRect)
     .attr("width",315)
-    .attr("height",200)
+    .attr("height",185)
     .attr("fill","#8C9763");
 
 // add pattern 
