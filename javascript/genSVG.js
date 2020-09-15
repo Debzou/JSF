@@ -63,6 +63,7 @@ const description = svgContainer.append("svg:rect")
     .attr("width",315)
     .attr("height",182)
     .attr("fill","#8C9763")
+    .attr("opacity",0.9)
     .attr("pointer-events", "none");
 
 // add pattern 

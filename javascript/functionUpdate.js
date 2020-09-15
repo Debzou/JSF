@@ -66,4 +66,7 @@ $("#generateCard").click(function() {
     const descriptionTxt4 = $('input#description4').val();
     $('text#descriptiontxt4').text(descriptionTxt4);
 
+    // update opacity
+    const opacity = $('input#opacity').val();
+    $('rect#description').attr('opacity',opacity);
 });
