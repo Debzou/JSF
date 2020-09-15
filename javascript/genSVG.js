@@ -4,31 +4,31 @@ console.log(`${filename} is imported`);
 
 // coordinate mana
 // with one mana's number
-const mx1 = 35;
-const my1 = 64;
+const mx1 = 25;
+const my1 = 52;
 // with two mana's number
-const mx2 = 23;
+const mx2 = 15;
 const my2 = my1;
 
 // coordinate attack
 // with one attack's number
-const ax1 = 35;
-const ay1 = 467;
+const ax1 = 26;
+const ay1 = 453;
 // with two attack's number
-const ax2 = 24;
+const ax2 = 16;
 const ay2 = ay1;
 
 // coordinate health
 // with one health's number
-const hx1 = 285;
+const hx1 = 280;
 const hy1 = ay1;
 // with two health's number
-const hx2 = 276;
+const hx2 = 270;
 const hy2 = ay1;
 
 // coordinate rect
 const xRect = 10;
-const yRect = 280;
+const yRect = 290;
 
 // coordinate description
 const xd = 35;
@@ -38,8 +38,8 @@ const yd = 320;
 // define container
 const svgContainer = d3.select("#cardsG")
     .append("svg")
-    .attr("width",340)
-    .attr("height",512);
+    .attr("width",324)
+    .attr("height",475);
 
 // add image center 
 const centerImage = svgContainer.append('svg:image')
@@ -66,9 +66,9 @@ const description = svgContainer.append("svg:rect")
 
 // add pattern 
 const card = svgContainer.append('svg:image')
-    .attr('href','./img/none.png')
-    .attr('width', 340)
-    .attr('height', 512)
+    .attr('href','./img/none2.png')
+    .attr('width', 324)
+    .attr('height', 474)
     .attr("pointer-events", "none");
 
 // add div mana
