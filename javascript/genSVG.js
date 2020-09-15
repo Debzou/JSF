@@ -62,7 +62,7 @@ const description = svgContainer.append("svg:rect")
     .attr("y",yRect)
     .attr("width",315)
     .attr("height",200)
-    .attr("fill","rgba(198, 45, 205, 0.8)");
+    .attr("fill","#8C9763");
 
 // add pattern 
 const card = svgContainer.append('svg:image')
