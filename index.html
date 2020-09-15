@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="./stylesheet/style.css">
     <script src="http://d3js.org/d3.v5.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>   
+    <script language="javascript" type="text/javascript" src="jquery.colorPicker.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>     
+    
 </head>
 <body id="body">
 <section class="section">
@@ -24,6 +26,12 @@
                     <input class="input" maxlength="2" id="health" placeholder="Health">
                 </div>
             </div>
+            <label>Choose your color :</label>
+            <input type="color" id="colorPicker" value="#6D1C3D">
+
+            <br/>
+            <br/>
+       
             <div class="container columns">
                 <div class="column">
                     <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
@@ -37,6 +45,7 @@
                 </div>
             </div>              
         </div>
+        
         <div class="column">    
             <div id="cardsG"></div>           
         </div>
@@ -47,5 +56,13 @@
 <script src="./javascript/functionUpdate.js"></script>
 <script src="./javascript/functionCreate.js"></script>
 <script src="./javascript/functionUpload.js"></script>
+
+<script>
+     jQuery(document).ready(function($) {
+      $('#color1').colorPicker();
+    });
+</script>
+
+
 
 </html>
