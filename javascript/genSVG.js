@@ -39,13 +39,13 @@ const yd = 320;
 const svgContainer = d3.select("#cardsG")
     .append("svg")
     .attr("width",324)
-    .attr("height",475);
+    .attr("height",474);
 
 // add image center 
 const centerImage = svgContainer.append('svg:image')
     .attr('id','output')
-    .attr('width', 340)
-    .attr('height', 512)
+    .attr('width', 324)
+    .attr('height', 475)
     .call(d3.zoom()
         .scaleExtent([1, 8])
         .on("zoom", zoom)
@@ -61,14 +61,15 @@ const description = svgContainer.append("svg:rect")
     .attr("x", xRect)
     .attr("y",yRect)
     .attr("width",315)
-    .attr("height",185)
-    .attr("fill","#8C9763");
+    .attr("height",182)
+    .attr("fill","#8C9763")
+    .attr("pointer-events", "none");
 
 // add pattern 
 const card = svgContainer.append('svg:image')
     .attr('href','./img/none2.png')
     .attr('width', 324)
-    .attr('height', 474)
+    .attr('height', 475)
     .attr("pointer-events", "none");
 
 // add div mana
@@ -105,12 +106,12 @@ const descript1 = svgContainer.append('svg:text')
     .attr("fill", d3.color("black"));
 
 const descript2 = svgContainer.append('svg:text')
-.attr('x',xd)
-.attr('y',yd+30)
-.attr('id','descriptiontxt2')
-.text('')
-.attr("font-size", "20px")
-.attr("fill", d3.color("black"));
+    .attr('x',xd)
+    .attr('y',yd+30)
+    .attr('id','descriptiontxt2')
+    .text('')
+    .attr("font-size", "20px")
+    .attr("fill", d3.color("black"));
 
 const descript3 = svgContainer.append('svg:text')
     .attr('x',xd)
@@ -121,12 +122,12 @@ const descript3 = svgContainer.append('svg:text')
     .attr("fill", d3.color("black"));
 
 const descript4 = svgContainer.append('svg:text')
-.attr('x',xd)
-.attr('y',yd+90)
-.attr('id','descriptiontxt4')
-.text('')
-.attr("font-size", "20px")
-.attr("fill", d3.color("black"));
+    .attr('x',xd)
+    .attr('y',yd+90)
+    .attr('id','descriptiontxt4')
+    .text('')
+    .attr("font-size", "20px")
+    .attr("fill", d3.color("black"));
 
 
 
