@@ -1,72 +1,45 @@
-// constant is define in genSVG
-
-// check the import
-const filename2 = "functionClick.js";
-console.log(`${filename2} is imported`);
-
 // event click on button
-$("#generateCard").click(function() {
-    // gather input form
-    let mana = $("input#mana").val();
-    let health = $("input#health").val();
-    let attack = $("input#attack").val();
-    // check length mana
-    // depending on the size, the coordinates will change.
-    if (mana.toString().length < 2){
-        // postion
-        $('text#manatxt').attr('x',mx1);
-        $('text#manatxt').attr('y',my1);
-        // value
-        $('text#manatxt').text(mana);
-    }else{
-        // postion$
-        $('text#manatxt').attr('x',mx2);
-        $('text#manatxt').attr('y',my2);
-        // value
-        $('text#manatxt').text(mana);
-    }
-    // check length attack
-    if (attack.toString().length < 2){
-        // postion
-        $('text#attacktxt').attr('x',ax1);
-        $('text#attacktxt').attr('y',ay1);
-        // value
-        $('text#attacktxt').text(attack);
-    }else{
-        // postion$
-        $('text#attacktxt').attr('x',ax2);
-        $('text#attacktxt').attr('y',ay2);
-        // value
-        $('text#attacktxt').text(attack);
-    }
-    // check length health
-    if (health.toString().length < 2){
-        // postion
-        $('text#healthtxt').attr('x',hx1);
-        $('text#healthtxt').attr('y',hy1);
-        // value
-        $('text#healthtxt').text(health);
-    }else{
-        // postion$
-        $('text#healthtxt').attr('x',hx2);
-        $('text#healthtxt').attr('y',hy2);
-        // value
-        $('text#healthtxt').text(health);
-    }
-    // update color
-    const color = $('input#colorPicker').val();
-    $('rect#description').attr('fill',color);
-    // update description
-    const descriptionTxt = $('input#description1').val();
-    $('text#descriptiontxt1').text(descriptionTxt);
-    const descriptionTxt2 = $('input#description2').val();
-    $('text#descriptiontxt2').text(descriptionTxt2);
-    const descriptionTxt3 = $('input#description3').val();
-    $('text#descriptiontxt3').text(descriptionTxt3);
-    const descriptionTxt4 = $('input#description4').val();
-    $('text#descriptiontxt4').text(descriptionTxt4);
+$("#generateCard").click(function () {
+  const manaText = $("input#mana").val();
+  const healthText = $("input#health").val();
+  const attackText = $("input#attack").val();
 
-    // update opacity
-    const opacity = $('input#opacity').val();
-    $('rect#description').attr('opacity',opacity);
+  // mana
+  $("text#mana-text").attr(
+    "x",
+    manaText.length < 2 ? mana.x.first : mana.x.second
+  );
+
+  $("text#mana-text").attr("y", mana.y);
+  $("text#mana-text").text(manaText);
+
+  // attack
+  $("text#attack-text").attr(
+    "x",
+    attackText.length < 2 ? attack.x.first : attack.x.second
+  );
+  $("text#attack-text").attr("y", attack.y);
+  $("text#attack-text").text(attackText);
+
+  // health
+  $("text#health-text").attr(
+    "x",
+    healthText.length < 2 ? health.x.first : health.x.second
+  );
+  $("text#health-text").attr("y", health.y);
+  $("text#health-text").text(healthText);
+
+  // update description
+  for (let i = 0; i < 4; i++) {
+    const descriptionText = $(`input#description${i}`).val();
+    $(`text#description-text${i}`).text(descriptionText);
+  }
+
+  // update color
+  const color = $("input#colorPicker").val();
+  $("rect#description").attr("fill", color);
+
+  // update opacity
+  const opacity = $("input#opacity").val();
+  $("rect#description").attr("opacity", opacity);
 });

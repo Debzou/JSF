@@ -1,135 +1,93 @@
-// check the import
-const filename = "genSVG.js";
-console.log(`${filename} is imported`);
-
-// coordinate mana
-// with one mana's number
-const mx1 = 25;
-const my1 = 52;
-// with two mana's number
-const mx2 = 15;
-const my2 = my1;
-
-// coordinate attack
-// with one attack's number
-const ax1 = 26;
-const ay1 = 453;
-// with two attack's number
-const ax2 = 16;
-const ay2 = ay1;
-
-// coordinate health
-// with one health's number
-const hx1 = 280;
-const hy1 = ay1;
-// with two health's number
-const hx2 = 270;
-const hy2 = ay1;
-
-// coordinate rect
-const xRect = 5;
-const yRect = 290;
-
-// coordinate description
-const xd = 35;
-const yd = 320;
-
-
 // define container
-const svgContainer = d3.select("#cardsG")
-    .append("svg")
-    .attr("width",324)
-    .attr("height",474);
+const svgContainer = d3
+  .select("#cardsG")
+  .append("svg")
+  .attr("width", 324)
+  .attr("height", 474);
 
-// add image center 
-const centerImage = svgContainer.append('svg:image')
-    .attr('id','output')
-    .attr('width', 324)
-    .attr('height', 475)
-    .call(d3.zoom()
-        .scaleExtent([1, 8])
-        .on("zoom", zoom)
-    );
-    
+// add image center
+const centerImage = svgContainer
+  .append("svg:image")
+  .attr("id", "output")
+  .attr("width", 324)
+  .attr("height", 475)
+  .call(d3.zoom().scaleExtent([1, 8]).on("zoom", zoom));
+
 function zoom() {
-    centerImage.attr("transform", d3.event.transform);
+  centerImage.attr("transform", d3.event.transform);
 }
 
+svgContainer
+  .append("svg:rect")
+  .attr("id", "description")
+  .attr("x", rect.x)
+  .attr("y", rect.y)
+  .attr("width", 315)
+  .attr("height", 182)
+  .attr("fill", "#8C9763")
+  .attr("opacity", 0.9)
+  .attr("pointer-events", "none");
 
-const description = svgContainer.append("svg:rect")
-    .attr('id','description')
-    .attr("x", xRect)
-    .attr("y",yRect)
-    .attr("width",315)
-    .attr("height",182)
-    .attr("fill","#8C9763")
-    .attr("opacity",0.9)
-    .attr("pointer-events", "none");
-
-// add pattern 
-const card = svgContainer.append('svg:image')
-    .attr('href','./img/none2.png')
-    .attr('width', 324)
-    .attr('height', 475)
-    .attr("pointer-events", "none");
+// add pattern
+addImage("./img/base.png", 475, 324, 0, 0);
 
 // add div mana
-const mana = svgContainer.append('svg:text')
-    .attr('x',mx2)
-    .attr('y',my2)
-    .attr('id','manatxt')
-    .text('10')
-    .attr("font-size", "40px")
-    .attr("fill", d3.color("white"));
+console.log("mana x", mana.x.first)
+console.log("mana y", mana.y)
+svgContainer
+  .append("svg:text")
+  .attr("x", mana.x.first)
+  .attr("y", mana.y)
+  .attr("id", "mana-text")
+  .text("10")
+  .attr("font-size", "40px")
+  .attr("fill", d3.color("white"));
 
-const attack = svgContainer.append('svg:text')
-    .attr('x',ax1)
-    .attr('y',ay1)
-    .attr('id','attacktxt')
-    .text('1')
-    .attr("font-size", "30px")
-    .attr("fill", d3.color("white"));
+svgContainer
+  .append("svg:text")
+  .attr("x", attack.x.first)
+  .attr("y", attack.y)
+  .attr("id", "attack-text")
+  .text("1")
+  .attr("font-size", "30px")
+  .attr("fill", d3.color("white"));
 
-const health = svgContainer.append('svg:text')
-    .attr('x',hx1)
-    .attr('y',hy1)
-    .attr('id','healthtxt')
-    .text('1')
-    .attr("font-size", "30px")
-    .attr("fill", d3.color("white"));
+svgContainer
+  .append("svg:text")
+  .attr("x", health.x.first)
+  .attr("y", health.y)
+  .attr("id", "health-text")
+  .text("1")
+  .attr("font-size", "30px")
+  .attr("fill", d3.color("white"));
 
-const descript1 = svgContainer.append('svg:text')
-    .attr('x',xd)
-    .attr('y',yd)
-    .attr('id','descriptiontxt1')
-    .text('Your liability')
+for (let i = 0; i < 4; i++) {
+  svgContainer
+    .append("svg:text")
+    .attr("x", description.x)
+    .attr("y", description.y + i * 30)
+    .attr("id", `description-text${i}`)
+    .text(i === 0 ? "Your liability" : "")
     .attr("font-size", "20px")
     .attr("fill", d3.color("black"));
+}
 
-const descript2 = svgContainer.append('svg:text')
-    .attr('x',xd)
-    .attr('y',yd+30)
-    .attr('id','descriptiontxt2')
-    .text('')
-    .attr("font-size", "20px")
-    .attr("fill", d3.color("black"));
+function addImage(imgPath, height, width, x, y) {
+  fetch(imgPath)
+    .then((response) => response.blob())
+    .then((blob) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = function () {
+        const base64data = reader.result;
 
-const descript3 = svgContainer.append('svg:text')
-    .attr('x',xd)
-    .attr('y',yd+60)
-    .attr('id','descriptiontxt3')
-    .text('')
-    .attr("font-size", "20px")
-    .attr("fill", d3.color("black"));
-
-const descript4 = svgContainer.append('svg:text')
-    .attr('x',xd)
-    .attr('y',yd+90)
-    .attr('id','descriptiontxt4')
-    .text('')
-    .attr("font-size", "20px")
-    .attr("fill", d3.color("black"));
-
-
-
-
+        svgContainer
+          .append("svg:image")
+          .attr("x", x)
+          .attr("y", y)
+          .attr("width", width)
+          .attr("height", height)
+          .attr("xlink:href", base64data);
+      };
+    });
+}
