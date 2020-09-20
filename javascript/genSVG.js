@@ -1,135 +1,148 @@
-// check the import
-const filename = "genSVG.js";
-console.log(`${filename} is imported`);
-
-// coordinate mana
-// with one mana's number
-const mx1 = 25;
-const my1 = 52;
-// with two mana's number
-const mx2 = 15;
-const my2 = my1;
-
-// coordinate attack
-// with one attack's number
-const ax1 = 26;
-const ay1 = 453;
-// with two attack's number
-const ax2 = 16;
-const ay2 = ay1;
-
-// coordinate health
-// with one health's number
-const hx1 = 280;
-const hy1 = ay1;
-// with two health's number
-const hx2 = 270;
-const hy2 = ay1;
-
-// coordinate rect
-const xRect = 5;
-const yRect = 290;
-
-// coordinate description
-const xd = 35;
-const yd = 320;
-
-
 // define container
-const svgContainer = d3.select("#cardsG")
-    .append("svg")
-    .attr("width",324)
-    .attr("height",474);
+const svgContainer = d3
+  .select("#cardsG")
+  .append("svg")
+  .attr("width", 324)
+  .attr("height", 474);
 
-// add image center 
-const centerImage = svgContainer.append('svg:image')
-    .attr('id','output')
-    .attr('width', 324)
-    .attr('height', 475)
-    .call(d3.zoom()
-        .scaleExtent([1, 8])
-        .on("zoom", zoom)
-    );
-    
-function zoom() {
+(async function () {
+  const defs = svgContainer.append("defs");
+
+  // TODO blur img
+  // defs
+  //   .append("filter")
+  //   .attr("id", "blur")
+  //   .append("feGaussianBlur")
+  //   .attr("stdDeviation", 5);
+
+  // const mask = defs.append("mask").attr("id", "blurMask");
+
+  // mask
+  //   .append("rect")
+  //   .attr("x", rect.x)
+  //   .attr("y", rect.y)
+  //   .attr("width", rect.width)
+  //   .attr("height", rect.height)
+  //   .attr("filter", "url(#blurMask)");
+
+  const gradient = defs
+    .append("linearGradient")
+    .attr("id", "descriptionGradient")
+    .attr("x1", "0%")
+    .attr("x2", "0%")
+    .attr("y1", "100%")
+    .attr("y2", "0%");
+
+  gradient
+    .append("stop")
+    .attr("class", "start")
+    .attr("offset", "0%")
+    .attr("stop-color", "#151F34")
+    .attr("stop-opacity", 0.9);
+
+  gradient
+    .append("stop")
+    .attr("class", "middle")
+    .attr("offset", "70%")
+    .attr("stop-color", "#151F34")
+    .attr("stop-opacity", 0.4);
+
+  gradient
+    .append("stop")
+    .attr("class", "end")
+    .attr("offset", "100%")
+    .attr("stop-color", "#151F34")
+    .attr("stop-opacity", 0);
+
+  // add image center
+  const centerImage = svgContainer
+    .append("svg:image")
+    .attr("id", "output")
+    .attr("width", 324)
+    .attr("height", 475)
+    .call(d3.zoom().scaleExtent([1, 8]).on("zoom", zoom));
+ // centerImage.attr("mask", "url(#blurMask)");
+
+  function zoom() {
     centerImage.attr("transform", d3.event.transform);
-}
+  }
 
-
-const description = svgContainer.append("svg:rect")
-    .attr('id','description')
-    .attr("x", xRect)
-    .attr("y",yRect)
-    .attr("width",315)
-    .attr("height",182)
-    .attr("fill","#8C9763")
-    .attr("opacity",0.9)
+  // add pattern
+  svgContainer
+    .append("svg:rect")
+    .attr("id", "description")
+    .attr("x", rect.x)
+    .attr("y", rect.y)
+    .attr("width", rect.width)
+    .attr("height", rect.height)
+    .attr("fill", "url(#descriptionGradient)")
     .attr("pointer-events", "none");
 
-// add pattern 
-const card = svgContainer.append('svg:image')
-    .attr('href','./img/none2.png')
-    .attr('width', 324)
-    .attr('height', 475)
+  const base64data = await getImageBase64("./img/base.png");
+  svgContainer
+    .append("svg:image")
+    .attr("id", "base-image")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", 324)
+    .attr("height", 475)
+    .attr("xlink:href", base64data)
     .attr("pointer-events", "none");
 
-// add div mana
-const mana = svgContainer.append('svg:text')
-    .attr('x',mx2)
-    .attr('y',my2)
-    .attr('id','manatxt')
-    .text('10')
+  svgContainer
+    .append("svg:text")
+    .attr("x", mana.x.second)
+    .attr("y", mana.y)
+    .attr("id", "mana-text")
+    .text("10")
     .attr("font-size", "40px")
-    .attr("fill", d3.color("white"));
+    .attr("fill", d3.color(white));
 
-const attack = svgContainer.append('svg:text')
-    .attr('x',ax1)
-    .attr('y',ay1)
-    .attr('id','attacktxt')
-    .text('1')
+  svgContainer
+    .append("svg:text")
+    .attr("x", attack.x.first)
+    .attr("y", attack.y)
+    .attr("id", "attack-text")
+    .text("1")
     .attr("font-size", "30px")
-    .attr("fill", d3.color("white"));
+    .attr("fill", d3.color(white));
 
-const health = svgContainer.append('svg:text')
-    .attr('x',hx1)
-    .attr('y',hy1)
-    .attr('id','healthtxt')
-    .text('1')
+  svgContainer
+    .append("svg:text")
+    .attr("x", health.x.first)
+    .attr("y", health.y)
+    .attr("id", "health-text")
+    .text("1")
     .attr("font-size", "30px")
-    .attr("fill", d3.color("white"));
+    .attr("fill", d3.color(white));
 
-const descript1 = svgContainer.append('svg:text')
-    .attr('x',xd)
-    .attr('y',yd)
-    .attr('id','descriptiontxt1')
-    .text('Your liability')
-    .attr("font-size", "20px")
-    .attr("fill", d3.color("black"));
-
-const descript2 = svgContainer.append('svg:text')
-    .attr('x',xd)
-    .attr('y',yd+30)
-    .attr('id','descriptiontxt2')
-    .text('')
-    .attr("font-size", "20px")
-    .attr("fill", d3.color("black"));
-
-const descript3 = svgContainer.append('svg:text')
-    .attr('x',xd)
-    .attr('y',yd+60)
-    .attr('id','descriptiontxt3')
-    .text('')
-    .attr("font-size", "20px")
-    .attr("fill", d3.color("black"));
-
-const descript4 = svgContainer.append('svg:text')
-    .attr('x',xd)
-    .attr('y',yd+90)
-    .attr('id','descriptiontxt4')
-    .text('')
-    .attr("font-size", "20px")
-    .attr("fill", d3.color("black"));
-
-
-
-
+  for (let i = 0; i < 4; i++) {
+    svgContainer
+      .append("svg:text")
+      .attr("x", "50%")
+      .attr("y", description.y + i * 30)
+      .attr("id", `description-text${i}`)
+      .text(i === 0 ? "Your liability" : "")
+      .attr("font-size", "20px")
+      .attr("text-anchor", "middle")
+      .attr("fill", d3.color(white));
+  }
+})();
+async function getImageBase64(imgPath) {
+  return new Promise((resolve, reject) => {
+    try {
+      fetch(imgPath)
+        .then((response) => response.blob())
+        .then((blob) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(blob);
+          reader.onloadend = function () {
+            const base64data = reader.result;
+            resolve(base64data);
+          };
+        });
+    } catch (err) {
+      reject(err);
+    }
+  });
+}

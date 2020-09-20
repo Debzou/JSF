@@ -1,68 +1,119 @@
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>JSF game</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link rel="stylesheet" href="./stylesheet/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./stylesheet/style.css" />
     <script src="http://d3js.org/d3.v5.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"></script>     
-    
-</head>
-<body id="body">
-<section class="section">
-<h1 class="title">JSF Generator</h1>
-    <div class="container columns">
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.10.1/js/all.js"
+    ></script>
+
+  </head>
+  <body id="body">
+    <section class="section">
+      <h1 class="title">JSF Generator</h1>
+      <div class="container columns">
         <div class="column">
-            <div class="container columns">
-                <div class="column">
-                    <input class="input" maxlength="2" id="mana" placeholder="Mana">
-                </div>
-                <div class="column">
-                    <input class="input" maxlength="2" id="attack" placeholder="Attack">
-                </div>
-                <div class="column">
-                    <input class="input" maxlength="2" id="health" placeholder="Health">
-                </div>
+          <div class="container columns">
+            <div class="column">
+              <input class="input" maxlength="2" id="mana" placeholder="Mana" />
             </div>
-            <label>Choose your color :</label>
-            <input type="color" id="colorPicker" value="#8C9763">
-            <label> &nbsp; Opacity :</label>
-            <input step="0.05" id="opacity" min="0.6" max="1" value="0.9" type="range">
-            <br/><br/>
-            <input class="input" maxlength="40" id="description1" placeholder="description Line 1"><br/><br/> 
-            <input class="input" maxlength="40" id="description2" placeholder="description Line 2"><br/><br/>  
-            <input class="input" maxlength="40" id="description3" placeholder="description Line 3"><br/><br/>
-            <input class="input" maxlength="40" id="description4" placeholder="description Line 4">              
-            <br/><br/>
-       
-            <div class="container columns">
-                <div class="column">
-                    <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
-                    <label class="button buttoncolor1" for="file" >Upload Image  &nbsp;<i class="fas fa-images"></i></label>                    
-                </div>
-                <div class="column">
-                    <a class="button buttoncolor1" id="generateCard">Update  &nbsp;<i class="fas fa-redo-alt"></i></a>
-                </div>               
-                <div class="column">
-                    <a class="button buttoncolor1" id="createCard">Download &nbsp;<i class="fas fa-upload"></i></a>
-                </div>
-            </div>              
+            <div class="column">
+              <input
+                class="input"
+                maxlength="2"
+                id="attack"
+                placeholder="Attack"
+              />
+            </div>
+            <div class="column">
+              <input
+                class="input"
+                maxlength="2"
+                id="health"
+                placeholder="Health"
+              />
+            </div>
+          </div>
+          <label>Choose your color :</label>
+          <input type="color" id="colorPicker" value="#151F34" />
+          <label> &nbsp; Opacity :</label>
+          <input
+            step="0.05"
+            id="opacity"
+            min="0.6"
+            max="1"
+            value="0.9"
+            type="range"
+          />
+          <br /><br />
+          <input
+            class="input"
+            maxlength="40"
+            id="description0"
+            placeholder="description Line 1"
+          /><br /><br />
+          <input
+            class="input"
+            maxlength="40"
+            id="description1"
+            placeholder="description Line 2"
+          /><br /><br />
+          <input
+            class="input"
+            maxlength="40"
+            id="description2"
+            placeholder="description Line 3"
+          /><br /><br />
+          <input
+            class="input"
+            maxlength="40"
+            id="description3"
+            placeholder="description Line 4"
+          />
+          <br /><br />
+
+          <div class="container columns">
+            <div class="column">
+              <input
+                type="file"
+                accept="image/*"
+                name="image"
+                id="file"
+                onchange="loadFile(event)"
+                style="display: none"
+              />
+              <label class="button buttoncolor1" for="file"
+                >Upload Image &nbsp;<i class="fas fa-images"></i
+              ></label>
+            </div>
+            <div class="column">
+              <a class="button buttoncolor1" id="generateCard"
+                >Update &nbsp;<i class="fas fa-redo-alt"></i
+              ></a>
+            </div>
+            <div class="column">
+              <a class="button buttoncolor1" id="createCard"
+                >Download &nbsp;<i class="fas fa-upload"></i
+              ></a>
+            </div>
+          </div>
         </div>
-        
-        <div class="column">    
-            <div id="cardsG"></div>           
+        <div class="column">
+          <div id="cardsG"></div>
         </div>
-    </div>
-</section>
-</body>
-<script src="./javascript/genSVG.js"></script>
-<script src="./javascript/functionUpdate.js"></script>
-<script src="./javascript/functionCreate.js"></script>
-<script src="./javascript/functionUpload.js"></script>
-
-
-
-
-
+      </div>
+    </section>
+  </body>
+  <script src="./javascript/variables.js"></script>
+  <script src="./javascript/genSVG.js"></script>
+  <script src="./javascript/functionUpdate.js"></script>
+  <script src="./javascript/functionCreate.js"></script>
+  <script src="./javascript/functionUpload.js"></script>
 </html>
