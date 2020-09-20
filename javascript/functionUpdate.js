@@ -9,8 +9,6 @@ $("#generateCard").click(function () {
     "x",
     manaText.length < 2 ? mana.x.first : mana.x.second
   );
-
-  $("text#mana-text").attr("y", mana.y);
   $("text#mana-text").text(manaText);
 
   // attack
@@ -18,7 +16,6 @@ $("#generateCard").click(function () {
     "x",
     attackText.length < 2 ? attack.x.first : attack.x.second
   );
-  $("text#attack-text").attr("y", attack.y);
   $("text#attack-text").text(attackText);
 
   // health
@@ -26,7 +23,6 @@ $("#generateCard").click(function () {
     "x",
     healthText.length < 2 ? health.x.first : health.x.second
   );
-  $("text#health-text").attr("y", health.y);
   $("text#health-text").text(healthText);
 
   // update description
